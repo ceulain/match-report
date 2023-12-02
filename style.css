@@ -1,0 +1,17 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+iframe {
+  margin-block-start: 120px;
+}
+
+label,
+input,
+select {
+  display: block;
+}
