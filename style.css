@@ -15,3 +15,12 @@ input,
 select {
   display: block;
 }
+
+#players {
+  margin: 16px 0;
+}
+
+.player-row {
+  display: flex;
+  flex-direction: row;
+}
