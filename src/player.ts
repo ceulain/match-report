@@ -1,4 +1,6 @@
-const createLabel = (text, forText) => {
+import { idfy } from "./utils";
+
+const createLabel = (text: string, forText: string) => {
   const label = document.createElement("label");
   label.setAttribute("for", forText);
 
@@ -7,19 +9,19 @@ const createLabel = (text, forText) => {
   return label;
 };
 
-class Player {
+export class Player {
   static playerId = 0;
 
-  constructor(lastName, firstName, number, position, comment) {
-    this.lastName = lastName;
-    this.firstName = firstName;
-    this.number = number;
-    this.position = position;
-    this.comment = comment;
-  }
+  // constructor(lastName, firstName, number, position, comment) {
+  //   this.lastName = lastName;
+  //   this.firstName = firstName;
+  //   this.number = number;
+  //   this.position = position;
+  //   this.comment = comment;
+  // }
 
-  #createInput(type, labelText, min = 1, max = 14) {
-    const id = `${idfy(labelText)}-${playerId}`;
+  #createInput(type: string, labelText: string, min = 1, max = 14) {
+    const id = `${idfy(labelText)}-${Player.playerId}`;
 
     const label = createLabel(labelText, id);
 
@@ -29,8 +31,8 @@ class Player {
     input.setAttribute("name", id);
 
     if (type === "number") {
-      input.setAttribute("min", min);
-      input.setAttribute("max", max);
+      input.setAttribute("min", String(min));
+      input.setAttribute("max", String(max));
     }
 
     const fragment = document.createDocumentFragment();
@@ -42,7 +44,7 @@ class Player {
 
   #poste() {
     const fragment = document.createDocumentFragment();
-    const id = `poste-${playerId}`;
+    const id = `poste-${Player.playerId}`;
     const label = createLabel("Choose a position:", id);
 
     const positions = [
@@ -80,7 +82,7 @@ class Player {
   #comment() {
     const fragment = document.createDocumentFragment();
 
-    const id = `comment-${playerId}`;
+    const id = `comment-${Player.playerId}`;
     const label = createLabel("Comment:", id);
 
     const textarea = document.createElement("textarea");
@@ -97,7 +99,7 @@ class Player {
     const players = document.querySelector("#players");
 
     const player = document.createElement("div");
-    player.setAttribute("id", `player-${playerId}`);
+    player.setAttribute("id", `player-${Player.playerId}`);
     player.classList.add("player-row");
 
     // last name
@@ -109,15 +111,16 @@ class Player {
 
     // close cross
     const cross = document.createElement("span");
-    cross.setAttribute("id", `cross-${playerId}`);
+    cross.setAttribute("id", `cross-${Player.playerId}`);
     cross.classList.add("material-symbols-outlined");
     cross.textContent = "close";
 
     cross.addEventListener("click", (event) => {
-      const id = event.target.id.split("-")[1];
+      const target = event.target as Element;
+      const id = target.id.split("-")[1];
       const player = document.getElementById(`player-${id}`);
 
-      player.remove();
+      player?.remove();
     });
 
     player.append(lastNameInput);
@@ -127,8 +130,8 @@ class Player {
     player.append(this.#comment());
     player.append(cross);
 
-    players.append(player);
+    players?.append(player);
 
-    playerId++;
+    Player.playerId++;
   }
 }
