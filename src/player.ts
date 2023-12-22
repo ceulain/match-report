@@ -12,14 +12,6 @@ const createLabel = (text: string, forText: string) => {
 export class Player {
   static playerId = 0;
 
-  // constructor(lastName, firstName, number, position, comment) {
-  //   this.lastName = lastName;
-  //   this.firstName = firstName;
-  //   this.number = number;
-  //   this.position = position;
-  //   this.comment = comment;
-  // }
-
   #createInput(type: string, labelText: string, min = 1, max = 14) {
     const id = `${idfy(labelText)}-${Player.playerId}`;
 

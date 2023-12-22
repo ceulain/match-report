@@ -10,12 +10,14 @@ const createPdf = async () => {
   const page = pdfDoc.addPage();
   const { height } = page.getSize();
   const fontSize = 24;
+
   const opponent = getFormValue("opponent");
   const me = getFormValue("me");
   const datetime = getFormValue("match-date");
   const location = getFormValue("location");
   const match =
     location === "Domicile" ? `${me} - ${opponent}` : `${opponent} - ${me}`;
+
   page.drawText(`${match} (${datetime})`, {
     x: 50,
     y: height - 4 * fontSize,
