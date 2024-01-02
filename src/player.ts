@@ -1,3 +1,4 @@
+import { Post } from "./types";
 import { idfy } from "./utils";
 
 const createLabel = (text: string, forText: string) => {
@@ -39,11 +40,11 @@ export class Player {
     const id = `poste-${Player.playerId}`;
     const label = createLabel("Choose a position:", id);
 
-    const positions = [
+    const positions: Post[] = [
       "GD",
       "ARD",
       "DCD",
-      "DGG",
+      "DCG",
       "ARG",
       "MC",
       "MCD",

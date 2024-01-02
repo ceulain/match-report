@@ -23,7 +23,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       <button type="button" id="add-player">Ajouter un joueur</button>
       <button type="button" id="generate-pdf">Generate pdf</button>
     </form>
-     <iframe id="pdf" style="width: 100%; height: 100%"></iframe>
+     <iframe id="pdf" height="700" width="600"></iframe>
 `;
 
 setupButtonPlayer(document.querySelector("#add-player") as Element);
