@@ -22,6 +22,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 
       <button type="button" id="add-player">Ajouter un joueur</button>
       <button type="button" id="generate-pdf">Generate pdf</button>
+      <button type="button" id="add-action">Ajouter une action</button>
     </form>
      <iframe id="pdf" height="700" width="600"></iframe>
 `;
