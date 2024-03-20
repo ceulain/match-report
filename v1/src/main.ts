@@ -19,6 +19,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       </select>
 
       <div id="players"></div>
+      <div id="actions"></div>
 
       <button type="button" id="add-player">Ajouter un joueur</button>
       <button type="button" id="generate-pdf">Generate pdf</button>

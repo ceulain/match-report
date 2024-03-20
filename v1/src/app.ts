@@ -1,11 +1,4 @@
-import {
-  rgb,
-  PDFDocument,
-  StandardFonts,
-  degrees,
-  grayscale,
-  PDFPage,
-} from "pdf-lib";
+import { rgb, PDFDocument, StandardFonts, PDFPage } from "pdf-lib";
 import { Player } from "./player";
 import { Post } from "./types";
 
@@ -197,14 +190,7 @@ const getCircleAndTextPosition = (post: Post) => {
 };
 
 const addCircle = (page: PDFPage) => {
-  console.log("Player.playerId :", Player.playerId);
-
   for (let i = 0; i < Player.playerId; i++) {
-    console.log(
-      "i :",
-      i,
-      document.querySelector(`#last-name-${i}`) as HTMLInputElement
-    );
     const lastName = (
       document.querySelector(`#last-name-${i}`) as HTMLInputElement
     ).value;
@@ -215,8 +201,6 @@ const addCircle = (page: PDFPage) => {
 
     const post = (document.querySelector(`#poste-${i}`) as HTMLInputElement)
       .value as Post;
-
-    console.log({ post });
 
     const { text, circle } = getCircleAndTextPosition(post);
 
@@ -275,3 +259,6 @@ export const setupButtonPlayer = (element: Element) =>
 
 export const setupButtonCreatePdf = (element: Element) =>
   element.addEventListener("click", () => createPdf());
+
+export const setupButtonAddAction = (element: Element) =>
+  element.addEventListener("click", () => addAction());
