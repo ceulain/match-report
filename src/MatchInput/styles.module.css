@@ -1,5 +1,6 @@
 .wrapper {
-  background-color: aqua;
+  display: flex;
+  justify-content: space-between;
   grid-area: match-input;
   margin: 12px;
 }
