@@ -1,0 +1,5 @@
+.wrapper {
+  background-color: green;
+  grid-area: pitch;
+  margin: 12px;
+}

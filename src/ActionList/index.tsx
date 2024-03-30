@@ -1,11 +1,11 @@
 import classes from "./styles.module.css";
 
-const PlayerHandler = () => {
+const ActionList = () => {
   return (
     <div className={classes.wrapper}>
-      <p>Player Handler</p>
+      <p>ActionList</p>
     </div>
   );
 };
 
-export default PlayerHandler;
+export default ActionList;

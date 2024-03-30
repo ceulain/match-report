@@ -1,5 +1,11 @@
+import classes from "./styles.module.css";
+
 const Pitch = () => {
-  return <p>Pitch</p>;
+  return (
+    <div className={classes.wrapper}>
+      <p>Pitch</p>
+    </div>
+  );
 };
 
 export default Pitch;

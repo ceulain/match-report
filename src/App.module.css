@@ -40,3 +40,14 @@
 .read-the-docs {
   color: #888;
 }
+
+.main-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "match-input match-input match-input"
+    "player-handler player-handlder pitch"
+    "action-handler action-handler pitch"
+    "action-list player-list pitch"
+    "........... main-button .....";
+}

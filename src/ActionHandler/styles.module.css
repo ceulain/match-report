@@ -1,0 +1,5 @@
+.wrapper {
+  background-color: coral;
+  grid-area: action-handler;
+  margin: 12px;
+}

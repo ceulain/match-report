@@ -1,0 +1,5 @@
+.wrapper {
+  background-color: chartreuse;
+  grid-area: player-list;
+  margin: 12px;
+}
