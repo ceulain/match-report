@@ -7,18 +7,20 @@ import PlayerList from "./PlayerList";
 import MainButton from "./MainButton";
 
 import classes from "./App.module.css";
+import { AppProvider } from "./AppContext";
 
 function App() {
   return (
-    <div className={classes["main-wrapper"]}>
-      <MatchInput />
-      <Pitch />
-      <ActionHandler />
-      <PlayerHandler />
-      <ActionList />
-      <PlayerList />
-      <MainButton />
-      {/* <div id="players"></div>
+    <AppProvider>
+      <div className={classes["main-wrapper"]}>
+        <MatchInput />
+        <Pitch />
+        <ActionHandler />
+        <PlayerHandler />
+        <ActionList />
+        <PlayerList />
+        <MainButton />
+        {/* <div id="players"></div>
       <div id="actions"></div>
       <button type="button" id="add-player">
         Ajouter un joueur
@@ -29,7 +31,8 @@ function App() {
       <button type="button" id="add-action">
         Ajouter une action
       </button> */}
-    </div>
+      </div>
+    </AppProvider>
   );
 }
 
