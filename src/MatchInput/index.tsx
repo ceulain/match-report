@@ -13,6 +13,9 @@ const MatchInput = () => {
     teamName: "",
   });
 
+  const isValidatedButton =
+    !!matchInfo.date && !!matchInfo.opponentName && !!matchInfo.teamName;
+
   const handleClick = () =>
     dispatch({ type: "addMatchInfo", payload: matchInfo });
 
@@ -66,7 +69,12 @@ const MatchInput = () => {
         </select>
       </span>
 
-      <button onClick={handleClick}>Valider</button>
+      <button
+        onClick={handleClick}
+        className={isValidatedButton ? classes["button-validated"] : undefined}
+      >
+        Valider
+      </button>
     </div>
   );
 };
