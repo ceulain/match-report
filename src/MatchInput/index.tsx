@@ -12,12 +12,14 @@ const MatchInput = () => {
     place: "Domicile",
     teamName: "",
   });
+  const [isValidatedButton, setIsValidatedButton] = useState(false);
 
-  const isValidatedButton =
-    !!matchInfo.date && !!matchInfo.opponentName && !!matchInfo.teamName;
-
-  const handleClick = () =>
+  const handleClick = () => {
+    setIsValidatedButton(
+      !!matchInfo.date && !!matchInfo.opponentName && !!matchInfo.teamName
+    );
     dispatch({ type: "addMatchInfo", payload: matchInfo });
+  };
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>

@@ -14,6 +14,7 @@ const initialApp: App = {
     place: "Domicile",
     teamName: "",
   },
+  players: [],
 };
 
 const AppContext = createContext<App>(initialApp);
@@ -44,6 +45,20 @@ const appReducer = (app: App, action: Action) => {
           date,
           place,
         },
+      };
+    }
+    case "addPlayer": {
+      const { firstName, lastName, post } = action.payload;
+      return {
+        ...app,
+        players: [
+          ...app.players,
+          {
+            firstName,
+            lastName,
+            post,
+          },
+        ],
       };
     }
     default: {

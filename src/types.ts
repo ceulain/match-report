@@ -1,3 +1,16 @@
+export type Post =
+  | "GD"
+  | "ARD"
+  | "DCD"
+  | "DCG"
+  | "ARG"
+  | "MC"
+  | "MCD"
+  | "MCG"
+  | "AD"
+  | "AV"
+  | "AG";
+
 export type MatchInfo = {
   teamName: string;
   opponentName: string;
@@ -7,6 +20,13 @@ export type MatchInfo = {
 
 export type App = {
   matchInfo: MatchInfo;
+  players: Player[];
+};
+
+export type Player = {
+  firstName: string;
+  lastName: string;
+  post: Post;
 };
 
 export type AddMatchInfo = {
@@ -14,4 +34,9 @@ export type AddMatchInfo = {
   payload: MatchInfo;
 };
 
-export type Action = AddMatchInfo;
+export type AddPlayer = {
+  type: "addPlayer";
+  payload: Player;
+};
+
+export type Action = AddMatchInfo | AddPlayer;
