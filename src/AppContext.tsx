@@ -62,7 +62,7 @@ const appReducer = (app: App, action: Action) => {
       };
     }
     default: {
-      throw Error("unknown action: " + action.type);
+      throw Error("unknown action");
     }
   }
 };
