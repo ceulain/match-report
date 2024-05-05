@@ -1,0 +1,21 @@
+.wrapper {
+  grid-area: pitch;
+  margin: 12px;
+}
+
+.canvas {
+  background-color: rgb(67, 145, 9);
+}
+
+.player {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: blue;
+}
+
+.gd {
+  position: relative;
+  top: 50%;
+  left: 20px;
+}

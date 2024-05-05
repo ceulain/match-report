@@ -1,0 +1,5 @@
+.wrapper {
+  background-color: antiquewhite;
+  grid-area: player-handler;
+  margin: 12px;
+}

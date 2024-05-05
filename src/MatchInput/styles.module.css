@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  grid-area: match-input;
+  margin: 12px;
+}
+
+.button-validated {
+  background-color: #93cf96;
+}

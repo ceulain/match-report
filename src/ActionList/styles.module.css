@@ -1,0 +1,5 @@
+.wrapper {
+  background-color: blueviolet;
+  grid-area: action-list;
+  margin: 12px;
+}
