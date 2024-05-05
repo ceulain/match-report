@@ -42,12 +42,13 @@
 }
 
 .main-wrapper {
+  height: 100vh;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
-    "match-input match-input match-input"
-    "player-handler player-handlder pitch"
-    "action-handler action-handler pitch"
-    "action-list player-list pitch"
-    "........... main-button .....";
+    "match-input match-input match-input match-input"
+    "player-handler player-handlder pitch pitch"
+    "action-handler action-handler pitch pitch"
+    "action-list player-list pitch pitch"
+    "........... main-button ..... .....";
 }

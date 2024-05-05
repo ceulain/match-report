@@ -54,7 +54,7 @@ const PlayerHandler = () => {
         placeholder="Nom"
         onChange={handleChange}
       />
-      <select name="post" id="" onChange={handleChange}>
+      <select name="post" onChange={handleChange}>
         {posts.map((post, index) => (
           <option key={index} value={post}>
             {post}
