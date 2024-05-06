@@ -12,13 +12,11 @@ const Pitch = () => {
       if (!ctx) return;
 
       ctx.strokeStyle = "white";
-      ctx.strokeRect(10, 10, 280, 480);
-      ctx.clearRect(125, 9, 50, 10);
-      ctx.clearRect(125, 489, 50, 10);
+      ctx.strokeRect(25, 25, 250, 450);
 
       ctx.beginPath();
-      ctx.moveTo(10, 250);
-      ctx.lineTo(290, 250);
+      ctx.moveTo(25, 250);
+      ctx.lineTo(275, 250);
       ctx.stroke();
 
       ctx.beginPath();
