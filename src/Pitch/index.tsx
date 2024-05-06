@@ -1,29 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 import classes from "./styles.module.css";
+import usePitch from "../hooks/usePitch";
 
 const Pitch = () => {
   const canvas = useRef<HTMLCanvasElement>(null);
 
-  useEffect(() => {
-    if (canvas.current) {
-      const ctx = canvas.current.getContext("2d");
-
-      if (!ctx) return;
-
-      ctx.strokeStyle = "white";
-      ctx.strokeRect(25, 25, 250, 450);
-
-      ctx.beginPath();
-      ctx.moveTo(25, 250);
-      ctx.lineTo(275, 250);
-      ctx.stroke();
-
-      ctx.beginPath();
-      ctx.arc(150, 250, 40, 0, 2 * Math.PI);
-      ctx.stroke();
-    }
-  }, []);
+  usePitch(canvas);
 
   return (
     <div className={classes.wrapper}>
