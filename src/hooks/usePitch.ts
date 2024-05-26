@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { drawPlayer } from "../utils/canvas";
 
 const usePitch = (canvas: React.RefObject<HTMLCanvasElement>) => {
   useEffect(() => {
@@ -24,8 +25,10 @@ const usePitch = (canvas: React.RefObject<HTMLCanvasElement>) => {
 
       ctx.rect(135, 475, 30, 10);
       ctx.stroke();
+
+      drawPlayer(ctx, 150, 40);
     }
-  }, []);
+  });
 };
 
 export default usePitch;
