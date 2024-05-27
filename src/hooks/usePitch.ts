@@ -26,7 +26,14 @@ const usePitch = (canvas: React.RefObject<HTMLCanvasElement>) => {
       ctx.rect(135, 475, 30, 10);
       ctx.stroke();
 
-      drawPlayer(ctx, 150, 40);
+      // GD
+      drawPlayer(ctx, 150, 40, "GD");
+
+      // ARD
+      drawPlayer(ctx, 40, 120, "ARD");
+
+      // ARG
+      drawPlayer(ctx, 260, 120, "ARG");
     }
   });
 };
