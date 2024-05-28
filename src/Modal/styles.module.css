@@ -1,0 +1,18 @@
+.wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  margin: 0 auto;
+
+  width: min-content;
+  height: min-content;
+  padding: 20px;
+  background-color: #000;
+}
+
+.close-button {
+  cursor: pointer;
+}

@@ -8,6 +8,7 @@ import MainButton from "./MainButton";
 
 import classes from "./App.module.css";
 import { AppProvider } from "./AppContext";
+import Modal from "./Modal";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <ActionList />
         <PlayerList />
         <MainButton />
+        <Modal />
         {/* <div id="players"></div>
       <div id="actions"></div>
       <button type="button" id="add-player">
