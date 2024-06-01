@@ -1,16 +1,27 @@
 .wrapper {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-wrapper {
   position: absolute;
   left: 0;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  border-radius: 10px;
 
   margin: 0 auto;
 
   width: min-content;
   height: min-content;
   padding: 20px;
-  background-color: #000;
+  background-color: #fff;
 }
 
 .close-button {
