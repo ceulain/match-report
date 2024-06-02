@@ -4,6 +4,8 @@ type Props = {
   onClose: () => void;
 };
 
+const mock = ["4-4-2", "4-3-3", "4-1-4-1"];
+
 export default function Content({ onClose }: Props) {
   return (
     <div className={classes.wrapper}>
@@ -14,7 +16,11 @@ export default function Content({ onClose }: Props) {
         >
           close
         </span>
-        <p>Je suis une modal</p>
+        <select>
+          {mock.map((formation) => (
+            <option value={formation}>{formation}</option>
+          ))}
+        </select>
         <button onClick={onClose}>Valider</button>
       </div>
     </div>
