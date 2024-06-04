@@ -1,12 +1,15 @@
+import { useState } from "react";
+import data from "../data";
 import classes from "./styles.module.css";
 
 type Props = {
   onClose: () => void;
 };
 
-const mock = ["4-4-2", "4-3-3", "4-1-4-1"];
-
 export default function Content({ onClose }: Props) {
+  const formations = Object.keys(data);
+  const [selectedFormation, setSelectedFormation] = useState(formations[0]);
+
   return (
     <div className={classes.wrapper}>
       <div className={classes["modal-wrapper"]}>
@@ -16,9 +19,17 @@ export default function Content({ onClose }: Props) {
         >
           close
         </span>
-        <select>
-          {mock.map((formation) => (
-            <option value={formation}>{formation}</option>
+        <label htmlFor="formations">Choisissez votre formation ?</label>
+        <select
+          id="formations"
+          name="formations"
+          value={selectedFormation}
+          onChange={(e) => setSelectedFormation(e.target.value)}
+        >
+          {formations.map((formation) => (
+            <option key={formation} value={formation}>
+              {formation}
+            </option>
           ))}
         </select>
         <button onClick={onClose}>Valider</button>
