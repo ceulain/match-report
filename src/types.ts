@@ -12,6 +12,7 @@ export type Post =
   | "AG";
 
 export type MatchInfo = {
+  formation: string;
   teamName: string;
   opponentName: string;
   date: string;
@@ -39,4 +40,9 @@ export type AddPlayer = {
   payload: Player;
 };
 
-export type Action = AddMatchInfo | AddPlayer;
+export type ChooseFormation = {
+  type: "chooseFormation";
+  payload: { formation: string };
+};
+
+export type Action = AddMatchInfo | AddPlayer | ChooseFormation;

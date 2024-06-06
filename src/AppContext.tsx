@@ -9,6 +9,7 @@ import { Action, App } from "./types";
 
 const initialApp: App = {
   matchInfo: {
+    formation: "",
     date: "",
     opponentName: "",
     place: "Domicile",
@@ -40,6 +41,7 @@ const appReducer = (app: App, action: Action) => {
       return {
         ...app,
         matchInfo: {
+          ...app.matchInfo,
           teamName,
           opponentName,
           date,
@@ -47,6 +49,7 @@ const appReducer = (app: App, action: Action) => {
         },
       };
     }
+
     case "addPlayer": {
       const { firstName, lastName, post } = action.payload;
       return {
@@ -59,6 +62,17 @@ const appReducer = (app: App, action: Action) => {
             post,
           },
         ],
+      };
+    }
+
+    case "chooseFormation": {
+      const { formation } = action.payload;
+
+      return {
+        ...app,
+        matchInfo: {
+          formation,
+        },
       };
     }
     default: {
