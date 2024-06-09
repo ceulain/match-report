@@ -6,11 +6,13 @@ import {
   useReducer,
 } from "react";
 import { Action, App } from "./types";
+import data from "./data";
 
 const initialApp: App = {
   matchInfo: {
-    formation: "",
+    composition: undefined,
     date: "",
+    formation: "",
     opponentName: "",
     place: "Domicile",
     teamName: "",
@@ -72,6 +74,7 @@ const appReducer = (app: App, action: Action) => {
         ...app,
         matchInfo: {
           formation,
+          composition: data[formation],
         },
       };
     }

@@ -5,13 +5,17 @@ export type Post =
   | "DCG"
   | "ARG"
   | "MC"
+  | "MD"
   | "MCD"
   | "MCG"
+  | "MG"
   | "AD"
   | "AV"
   | "AG";
 
+export type Composition = Partial<Record<Post, { x: number; y: number }>>;
 export type MatchInfo = {
+  composition?: Composition;
   formation: string;
   teamName: string;
   opponentName: string;

@@ -1,3 +1,5 @@
+import { Composition } from "./types";
+
 const fourDefence = {
   GD: {
     x: 0,
@@ -21,59 +23,64 @@ const fourDefence = {
   },
 };
 
-export default {
-  443: {
-    ...fourDefence,
-    MD: {
-      x: 0,
-      y: 0,
-    },
-    MCD: {
-      x: 0,
-      y: 0,
-    },
-    MCG: {
-      x: 0,
-      y: 0,
-    },
-    MG: {
-      x: 0,
-      y: 0,
-    },
-    ATD: {
-      x: 0,
-      y: 0,
-    },
-    ATG: {
-      x: 0,
-      y: 0,
-    },
+const fourfourThree: Composition = {
+  ...fourDefence,
+  MC: {
+    x: 0,
+    y: 0,
   },
-  442: {
-    ...fourDefence,
-    MC: {
-      x: 0,
-      y: 0,
-    },
-    MCD: {
-      x: 0,
-      y: 0,
-    },
-    MCG: {
-      x: 0,
-      y: 0,
-    },
-    ATD: {
-      x: 0,
-      y: 0,
-    },
-    ATG: {
-      x: 0,
-      y: 0,
-    },
-    AV: {
-      x: 0,
-      y: 0,
-    },
+  MCD: {
+    x: 0,
+    y: 0,
+  },
+  MCG: {
+    x: 0,
+    y: 0,
+  },
+  AD: {
+    x: 0,
+    y: 0,
+  },
+  AV: {
+    x: 0,
+    y: 0,
+  },
+  AG: {
+    x: 0,
+    y: 0,
   },
 };
+
+const fourFourTwo: Composition = {
+  ...fourDefence,
+  MC: {
+    x: 0,
+    y: 0,
+  },
+  MCD: {
+    x: 0,
+    y: 0,
+  },
+  MCG: {
+    x: 0,
+    y: 0,
+  },
+  AD: {
+    x: 0,
+    y: 0,
+  },
+  AG: {
+    x: 0,
+    y: 0,
+  },
+  AV: {
+    x: 0,
+    y: 0,
+  },
+};
+
+export type Compositions = Record<string, Composition>;
+export default {
+  443: fourfourThree,
+  442: fourFourTwo,
+} as Compositions;
