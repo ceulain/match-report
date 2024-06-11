@@ -73,6 +73,7 @@ const appReducer = (app: App, action: Action) => {
       return {
         ...app,
         matchInfo: {
+          ...app.matchInfo,
           formation,
           composition: data[formation],
         },

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import classes from "./styles.module.css";
-import { Player } from "../types";
+import { Player, Post } from "../types";
 import { useAppDispatch } from "../AppContext";
 
 const posts = [
@@ -23,7 +23,7 @@ const PlayerHandler = () => {
   const initState = {
     firstName: "",
     lastName: "",
-    post: "" as any,
+    post: "" as Post,
   };
   const [player, setPlayer] = useState<Player>(initState);
 
