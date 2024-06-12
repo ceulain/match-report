@@ -1,30 +1,20 @@
 import { useState } from "react";
 import classes from "./styles.module.css";
 import { Player, Post } from "../types";
-import { useAppDispatch } from "../AppContext";
-
-const posts = [
-  "GD",
-  "ARD",
-  "DCD",
-  "DCG",
-  "ARG",
-  "MC",
-  "MCD",
-  "MCG",
-  "AD",
-  "AV",
-  "AG",
-];
+import { useApp, useAppDispatch } from "../AppContext";
 
 const PlayerHandler = () => {
-  const dispatch = useAppDispatch();
-
   const initState = {
     firstName: "",
     lastName: "",
     post: "" as Post,
   };
+
+  const dispatch = useAppDispatch();
+  const {
+    matchInfo: { composition },
+  } = useApp();
+
   const [player, setPlayer] = useState<Player>(initState);
 
   const handleChange = (
@@ -55,7 +45,7 @@ const PlayerHandler = () => {
         onChange={handleChange}
       />
       <select name="post" onChange={handleChange}>
-        {posts.map((post, index) => (
+        {Object.keys(composition ?? {}).map((post, index) => (
           <option key={index} value={post}>
             {post}
           </option>
