@@ -14,8 +14,8 @@ const PlayerHandler = () => {
   const {
     matchInfo: { composition },
   } = useApp();
-
   const [player, setPlayer] = useState<Player>(initState);
+  const posts = Object.keys(composition ?? {});
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -44,13 +44,15 @@ const PlayerHandler = () => {
         placeholder="Nom"
         onChange={handleChange}
       />
-      <select name="post" onChange={handleChange}>
-        {Object.keys(composition ?? {}).map((post, index) => (
-          <option key={index} value={post}>
-            {post}
-          </option>
-        ))}
-      </select>
+      {!!posts.length && (
+        <select name="post" onChange={handleChange}>
+          {posts.map((post, index) => (
+            <option key={index} value={post}>
+              {post}
+            </option>
+          ))}
+        </select>
+      )}
       <button onClick={handleClick}>Ajouter un joueur</button>
     </div>
   );
