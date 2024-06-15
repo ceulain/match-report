@@ -7,7 +7,7 @@ const PlayerHandler = () => {
   const initState = {
     firstName: "",
     lastName: "",
-    post: "" as Post,
+    post: "GD" as Post,
   };
 
   const dispatch = useAppDispatch();
@@ -16,6 +16,8 @@ const PlayerHandler = () => {
   } = useApp();
   const [player, setPlayer] = useState<Player>(initState);
   const posts = Object.keys(composition ?? {});
+
+  console.log({ player });
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
